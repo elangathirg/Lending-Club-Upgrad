@@ -1,61 +1,29 @@
 # Lending-Club-Upgrad
-CASE STUDY FOR LENDING - BY UPGRAD
-Lending Club Case Study - UPGRAD
-Table of Contents
-General Info
-Technologies Used
-Conclusions
-Acknowledgements
-General Information
-I assume to work for a consumer finance company which specialises in lending various types of loans to urban customers. When the company receives a loan application, the company has to make a decision for loan approval based on the applicant’s profile. Two types of risks are associated with the bank’s decision:
-If the applicant is likely to repay the loan, then not approving the loan results in a loss of business to the company
-If the applicant is not likely to repay the loan, i.e. he/she is likely to default, then approving the loan may lead to a financial loss for the company
-The data given contains information about past loan applicants and whether they ‘defaulted’ or not. The aim is to identify patterns which indicate if a person is likely to default, which may be used for taking actions such as denying the loan, reducing the amount of loan, lending (to risky applicants) at a higher interest rate, etc.
-In this case study, I will use EDA to understand how consumer attributes and loan attributes influence the tendency of default.
-When a person applies for a loan, there are two types of decisions that could be taken by the company:
+**CASE STUDY FOR LENDING - BY UPGRAD
+**Lending Club Case Study - UPGRAD
 
-Loan accepted: If the company approves the loan, there are 3 possible scenarios described below:
-Fully paid: Applicant has fully paid the loan (the principal and the interest rate)
-Current: Applicant is in the process of paying the instalments, i.e. the tenure of the loan is not yet completed. These candidates are not labelled as 'defaulted'.
-Charged-off: Applicant has not paid the instalments in due time for a long period of time, i.e. he/she has defaulted on the loan
-Loan rejected: The company had rejected the loan (because the candidate does not meet their requirements etc.). Since the loan was rejected, there is no transactional history of those applicants with the company and so this data is not available with the company (and thus in this dataset)
-Business Objectives
-This company is the largest online loan marketplace, facilitating personal loans, business loans, and financing of medical procedures. Borrowers can easily access lower interest rate loans through a fast online interface.
+This document details an exploratory data analysis (EDA) conducted on a loan dataset to identify factors contributing to loan defaults. The analysis was performed from the perspective of a consumer finance company specializing in various loan types for urban customers.
 
-Like most other lending companies, lending loans to ‘risky’ applicants is the largest source of financial loss (called credit loss). Credit loss is the amount of money lost by the lender when the borrower refuses to pay or runs away with the money owed. In other words, borrowers who default cause the largest amount of loss to the lenders. In this case, the customers labelled as 'charged-off' are the 'defaulters'.
+When evaluating a loan application, the company faces a dual risk: rejecting a creditworthy applicant results in lost business, while approving a high-risk applicant can lead to financial losses through defaults. The provided dataset contains historical loan data, including information on past applicants and their loan repayment status (defaulted or not). The primary objective of this analysis is to uncover patterns and indicators of potential default. This information can then be used to inform lending decisions, such as loan denial, loan amount reduction, or adjusted interest rates for higher-risk borrowers.
 
-If one is able to identify these risky loan applicants, then such loans can be reduced thereby cutting down the amount of credit loss. Identification of such applicants using EDA is the aim of this case study.
+This case study uses EDA to examine the influence of consumer and loan attributes on default probability. The possible outcomes of a loan application are:
 
-In other words, the company wants to understand the driving factors (or driver variables) behind loan default, i.e. the variables which are strong indicators of default. The company can utilise this knowledge for its portfolio and risk assessment.
+Loan Accepted: This can further result in:
+Fully Paid: The loan is repaid in full, including principal and interest.
+Current: The loan is still being repaid according to the agreed schedule.
+Charged-off: The borrower has defaulted on the loan by failing to make payments for an extended period.
+Loan Rejected: These applications are not included in the dataset as no loan transaction occurred.
+The business objective is to minimize credit loss, the financial loss incurred when borrowers default. In this context, "charged-off" loans represent defaults and are the primary focus of this analysis. By identifying characteristics of likely defaulters, the company aims to reduce credit loss and improve portfolio performance. The analysis seeks to pinpoint the key drivers of loan default, providing valuable insights for risk assessment and portfolio management.
 
-To develop our understanding of the domain, I am advised to independently research a little about risk analytics (understanding the types of variables and their significance should be enough).
+This analysis is based on a dataset containing complete loan data from 2007 to 2011, accompanied by a data dictionary. The EDA reveals several key findings:
 
-Data Set:
-It contains the complete loan data for all loans issued through the time period 2007 t0 2011. data dictionary which describes the meaning of these variables is also attached.
-
-Conclusions
-Loan amount, investor amount, funding amount are strongly correlated.
-
-Annual income with DTI(Debt-to-income ratio) is negatively correlated.
-
-Customers who are getting 'charged off', have lower annual incomes than the ones who paid fully for every grade (i.e. at same interest range), hence Lending club should put threshold on the maximum loan amount to be disbursed to such applicants, if at all. And along with it. it is recommended that Lending Club shorten the repayment tenure as well.
-
-Grades are good metric for detecting defaulters. Lending Club should examine more information from borrowers before issuing loans to Low grade (G to A)
-
-Lending Club should control the number of loans issued to borrowers who are from CA, FL and NY to make profits
-
-Borrowers with mortgage home ownership are taking higher loans and defaulting on the approved loans. Lending club can put a threshold for such customers or add additional clauses before approving such loans
-
-Lending club should also reduce the tenure of repayment months to slash the percentage of ‘Charged Off’ applications.
-
-The lending club should make sure there are no public derogatory records for borrowers as these types of people have more chance of filing a bankruptcy.
-
-Since Loan taken for Small Business purpose, Debt consolidation and Credit cards, are somewhat evenly distributed as compared to loan taken for other purposes, lending club can focus on these segments.
-
-The lending club should stop giving loans to the above category when the loan amount requested is more than 12000
-
-Technologies Used
-python == 3.10.5 numpy==2.0.2 pandas==2.2.2 seaborn==0.13.2 re==2.2.1 platform==1.0.8
-
-Acknowledgements
-This project was inspired by Upgrad and was collaborated upon by Elangahtir G
+Strong correlations exist between loan amount, investor amount, and funding amount.
+A negative correlation is observed between annual income and the debt-to-income (DTI) ratio.
+Charged-off customers tend to have lower annual incomes compared to those who fully repaid their loans within the same loan grade (interest rate range). This suggests implementing loan amount thresholds and shorter repayment tenures for such applicants.
+Loan grades are effective indicators of default risk, highlighting the need for more thorough borrower assessments, especially for lower-grade (G to A) loans.
+Controlling loan volumes in high-risk regions (e.g., CA, FL, NY) could improve profitability.
+Borrowers with mortgages tend to take larger loans and experience higher default rates, suggesting the need for stricter lending criteria or additional safeguards for this group.
+Shorter repayment tenures could reduce the percentage of charged-off applications.
+The presence of public derogatory records increases the likelihood of bankruptcy and default.
+Loans for small businesses, debt consolidation, and credit card refinancing represent significant portions of the loan portfolio and warrant focused analysis, particularly for loan amounts exceeding $12,000.
+The analysis was conducted using Python (version 3.10.5) with libraries such as NumPy, Pandas, Seaborn, and the re and platform modules. This project was tasked by Upgrad and was carried out by Elangathir G.
