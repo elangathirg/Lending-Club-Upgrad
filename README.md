@@ -15,15 +15,7 @@ Charged-off: The borrower has defaulted on the loan by failing to make payments 
 Loan Rejected: These applications are not included in the dataset as no loan transaction occurred.
 The business objective is to minimize credit loss, the financial loss incurred when borrowers default. In this context, "charged-off" loans represent defaults and are the primary focus of this analysis. By identifying characteristics of likely defaulters, the company aims to reduce credit loss and improve portfolio performance. The analysis seeks to pinpoint the key drivers of loan default, providing valuable insights for risk assessment and portfolio management.
 
-This analysis is based on a dataset containing complete loan data from 2007 to 2011, accompanied by a data dictionary. The EDA reveals several key findings:
+The EDA reveals the following key findings:
 
-Strong correlations exist between loan amount, investor amount, and funding amount.
-A negative correlation is observed between annual income and the debt-to-income (DTI) ratio.
-Charged-off customers tend to have lower annual incomes compared to those who fully repaid their loans within the same loan grade (interest rate range). This suggests implementing loan amount thresholds and shorter repayment tenures for such applicants.
-Loan grades are effective indicators of default risk, highlighting the need for more thorough borrower assessments, especially for lower-grade (G to A) loans.
-Controlling loan volumes in high-risk regions (e.g., CA, FL, NY) could improve profitability.
-Borrowers with mortgages tend to take larger loans and experience higher default rates, suggesting the need for stricter lending criteria or additional safeguards for this group.
-Shorter repayment tenures could reduce the percentage of charged-off applications.
-The presence of public derogatory records increases the likelihood of bankruptcy and default.
-Loans for small businesses, debt consolidation, and credit card refinancing represent significant portions of the loan portfolio and warrant focused analysis, particularly for loan amounts exceeding $12,000.
+
 The analysis was conducted using Python (version 3.10.5) with libraries such as NumPy, Pandas, Seaborn, and the re and platform modules. This project was tasked by Upgrad and was carried out by Elangathir G.
