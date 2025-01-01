@@ -16,6 +16,18 @@ Loan Rejected: These applications are not included in the dataset as no loan tra
 The business objective is to minimize credit loss, the financial loss incurred when borrowers default. In this context, "charged-off" loans represent defaults and are the primary focus of this analysis. By identifying characteristics of likely defaulters, the company aims to reduce credit loss and improve portfolio performance. The analysis seeks to pinpoint the key drivers of loan default, providing valuable insights for risk assessment and portfolio management.
 
 The EDA reveals the following key findings:
-
+Small business, Educational and Renewal Energy are riskier purposes for Loan disbursal
+We can recommend to increase loan disbursal for wedding and home improvement
+We can strongly observe higher default risk associated with longer repayment duration
+We observe the following states having relatively higher defaulting rates
+SD: South Dakota AK: Alaska FL: Florida NV: Nevada
+The higher the loan enquiries especially at the higher end of greater than 6 enquiries default rates is higher
+Leaving out the low and high extremes there is a linear correlation between Default rate and Ratio of Debt to Income
+Using Bivariate Analysis certain postulates are checked for:
+Higher loan amounts are associated with longer terms (e.g., 60 months), strong association exists as postulated
+Higher loan amounts tend to have higher interest rates, strong association exists as postulated
+Borrowers with higher income utilize less revolving credit, contrary to the postulate the high income group utilizes greater revolving credit
+Correlation exists between interest rate and installment duration, so the default risk is countered with higher interest rates
+With higher interest rate loans we recommend approving shorter repayment term 
 
 The analysis was conducted using Python (version 3.10.5) with libraries such as NumPy, Pandas, Seaborn, and the re and platform modules. This project was tasked by Upgrad and was carried out by Elangathir G.
